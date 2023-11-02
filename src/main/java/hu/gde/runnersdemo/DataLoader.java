@@ -14,8 +14,7 @@ public class DataLoader implements CommandLineRunner {
         this.runnerRepository = runnerRepository;
     }
 
-    //aaaaaksklfasklfklas
-    //bababababababab
+  //jó lett
 
     @Override
     public void run(String... args) {
