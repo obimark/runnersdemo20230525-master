@@ -54,4 +54,5 @@ public class LapTimeEntity {
         this.timeSeconds = timeSeconds;
     }
 
+
 }
