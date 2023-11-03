@@ -14,8 +14,6 @@ public class DataLoader implements CommandLineRunner {
         this.runnerRepository = runnerRepository;
     }
 
-  //jó lett
-
     @Override
     public void run(String... args) {
         RunnerEntity runnerEntity = new RunnerEntity();

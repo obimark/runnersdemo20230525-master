@@ -11,9 +11,9 @@ public class RunnerEntity {
     private long runnerId;
     private String runnerName;
     private long averagePace;
-
     private long height;
 
+    //one-to-many relationship with LapTimeEntity, meaning each runner can have multiple lap times.
     @OneToMany(mappedBy = "runner", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LapTimeEntity> laptimes = new ArrayList<>();
 

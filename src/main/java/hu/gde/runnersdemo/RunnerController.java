@@ -17,10 +17,23 @@ public class RunnerController {
     private RunnerRepository runnerRepository;
     @Autowired
     private LapTimeRepository lapTimeRepository;
+    private final RunnerService runnerService;
+
+    public RunnerController(RunnerRepository runnerRepository, LapTimeRepository lapTimeRepository, RunnerService runnerService) {
+        this.runnerRepository = runnerRepository;
+        this.lapTimeRepository = lapTimeRepository;
+        this.runnerService = runnerService;
+    }
+
     @GetMapping("/runners")
     public String getAllRunners(Model model) {
         List<RunnerEntity> runners = runnerRepository.findAll();
         model.addAttribute("runners", runners);
+
+        // Calculate the average height
+        double averageHeight = runnerService.calculateAverageHeight();
+        model.addAttribute("averageHeight", averageHeight);
+
         return "runners";
     }
 
